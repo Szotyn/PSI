@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer src="main.js"></script>
+    
+  </head>
+  <body onload="Colorize()" style="user-select: none">
+    <fieldset
+      style="
+        width: 200px;
+        float: left;
+        max-height: 160.4px;
+        min-height: 160.4px;
+      "
+    >
+      <legend>pick color:</legend>
+      <span style="color: red; font-weight: bolder">R:</span>
+      <input
+        class="cp"
+        oninput="Colorize(); getResult(); share(0,3)"
+        type="range"
+        name=""
+        min="0"
+        max="255"
+        value="127"
+        id=""
+
+      /><br />
+      <span style="color: green; font-weight: bolder">G:</span>
+      <input
+        type="range"
+        oninput="Colorize(); getResult(); share(1,4)"
+        class="cp"
+        name=""
+        min="0"
+        max="255"
+        value="127"
+        id=""
+      /><br />
+      <span style="color: blue; font-weight: bolder">B:</span>
+      <input
+        type="range"
+        oninput="Colorize(); getResult(); share(2,5)"
+        name=""
+        class="cp"
+        min="0"
+        max="255"
+        value="127"
+        id=""
+      /><br />
+      <div
+        id="out"
+        style="
+          margin-left: auto;
+          text-align: center;
+          margin-right: auto;
+          color: white;
+          text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+            #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+          border: 3px black solid;
+          width: 210px;
+          height: 30px;
+          margin-bottom: 5px;
+        "
+      >
+        rgb(<input
+          class="cp"
+          type="number"
+          name=""
+          id="c1"
+          oninput="Colorize(); getResult(); share(3,0)"
+          min="0"
+          value="127"
+          max="255"
+          style="
+            width: 40px;
+            background-color: inherit;
+            border: none;
+            color: white;
+            text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+              #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+          "
+        />,
+        <input
+          type="number"
+          class="cp"
+          oninput="Colorize(); getResult(); share(4,1)"
+          name=""
+          id="c2"
+          min="0"
+          value="127"
+          max="255"
+          style="
+            width: 40px;
+            background-color: inherit;
+            border: none;
+            color: white;
+            text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+              #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+          "
+        />,
+        <input
+          type="number"
+          class="cp"
+          name=""
+          id="c3"
+          min="0"
+          oninput="Colorize(); getResult(); share(5,2)"
+          value="127"
+          max="255"
+          style="
+            width: 40px;
+            background-color: inherit;
+            border: none;
+            color: white;
+            text-shadow: #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px,
+              #000 0px 0px 1px, #000 0px 0px 1px, #000 0px 0px 1px;
+          "
+        />)
+      </div>
+    </fieldset>
+
+    <fieldset style="width: 200px; max-height: 160.4px; min-height: 160.4px">
+      <legend>pick properties:</legend>
+      <label for="isJucy">is it jucy:</label>
+      <select name="" oninput="getResult()" id="isJucy">
+        <option value="1">yes</option>
+        <option value="-1">no</option>
+        <option value="0" selected>i don't know</option>
+      </select>
+      <br />
+
+      <label for="isSweet">is it sweet:</label>
+      <select name="" oninput="getResult()" id="isSweet">
+        <option value="1">yes</option>
+        <option value="-1">no</option>
+        <option value="0" selected>i don't know</option>
+      </select>
+      <br />
+
+      <label for="seedCount">how many seeds:</label>
+      <select name="" oninput="getResult()" id="seedCount">
+        <option value="-1" selected>i don't know</option>
+        <option value="0">none</option>
+        <option value="1">one</option>
+        <option value="2">some</option>
+        <option value="3">a lot</option>
+      </select>
+    </fieldset>
+
+    <br />
+
+    <fieldset style="width: 430px">
+      <legend>results:</legend>
+      <div id="result"></div>
+    </fieldset>
+  </body>
+</html>
